@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.todo-container-body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.todo-body {
+  width: 60%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 12px;
+}
+
+.todo-navlist {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 2rem;
+  position: absolute;
+  top: 2rem;
+  right: 0;
+}
+
+.todo-navlist h1 {
+  font-size: 2.5rem;
+}
+
+.todo-search {
+  width: 14rem;
+}
+
+.todo-search input {
+  height: 2.5rem;
+  border-radius: 3rem;
+  width: 100%;
+  padding: 0 1rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+.todo-adding-events {
+  width: 100%;
+  position: absolute;
+  top: 7rem;
+  height: fit-content;
+}
+
+.adding-content-section {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.adding-content-section input {
+  width: 100%;
+  border-radius: 3rem;
+
+  height: 4rem;
+  border-radius: 3rem;
+  outline: none;
+  padding: 0 0 0 2rem;
+  font-size: 1.5rem;
+  /* border-top-right-radius: 0; */
+  /* border-bottom-right-radius: 0; */
+}
+
+.adding-content-section button {
+  width: 20%;
+  border-top-right-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+  outline: none;
+  font-size: 1.5rem;
+  background-color: #ff5846;
+  position: absolute;
+  height: 4rem;
+  border-radius: 3rem;
+  right: 0;
+  margin-right: 2rem;
+}
+
+ul {
+  width: 100%;
+  padding: 0 3rem;
+  text-decoration: none;
+  gap: 13px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 13rem;
+}
+
+ul li {
+  padding: 0 2.5rem;
+  list-style: none;
+  font-size: 2rem;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  align-items: center;
+  width: 98%;
+  padding-right: 8rem;
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-image: url(/image/unchecked.png);
+  background-position: center;
+  background-size: cover;
+}
+
+ul li.checked {
+  color: #555;
+  width: 98%;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  background-image: url(/image/check.png);
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+}
+
+li span {
+  position: absolute;
+  right: -0.5rem;
+  font-size: 16px;
+}
+
+.hidden {
+  display: none;
+}
+
+.span-button-edit {
+  width: 4rem;
+  height: 2rem;
+  background-color: orange;
+  border-radius: 8px;
+  position: absolute;
+  left: -8.7rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.span-button-delete {
+  width: 4rem;
+  height: 2rem;
+  background-color: orange;
+  border-radius: 8px;
+  position: absolute;
+  font-weight: bold;
+  left: -4.5rem;
+  cursor: pointer;
+}
+
+.text-input {
+  width: 80%;
+  height: 2rem;
+  padding: 0 4px;
+  border: 0;
+  font-size: 1.5rem;
+  border-bottom: 1px solid black;
+  outline: none;
+}
+
+/* Responsive designing */
+
+@media (min-width: 200px) and (max-width: 430px) {
+  .todo-body {
+    width: 95%;
+    height: 95vh;
+  }
+
+  .todo-navlist {
+    padding: 0 1rem;
+  }
+
+  .todo-navlist h1 {
+    font-size: 1.5rem;
+  }
+
+  .todo-search {
+    width: 7.5rem;
+  }
+
+  #todo-search {
+    height: 2rem;
+    font-size: 0.8rem;
+  }
+
+  .todo-adding-events {
+    top: 5rem;
+  }
+
+  .adding-content-section {
+    padding: 0 1rem;
+  }
+
+  #add-event {
+    height: 2rem;
+    font-size: 1rem;
+    padding: 0 0 0 1rem;
+  }
+
+  .adding-content-section button {
+    height: 2rem;
+    right: -16px;
+    font-size: 1rem;
+  }
+
+  #todo-lists {
+    top: 8rem;
+    padding: 0 1rem;
+  }
+
+  #todo-lists li {
+    padding: 0 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  ul li::before {
+    width: 20px;
+    top: 5px;
+    height: 20px;
+  }
+
+  .text-input {
+    width: 70%;
+    font-size: 1rem;
+    height: 1.5rem;
+  }
+
+  .span-button-delete {
+    width: 3rem;
+    left: -50px;
+    height: 1.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .span-button-edit {
+    width: 3rem;
+    left: -100px;
+    height: 1.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+}
