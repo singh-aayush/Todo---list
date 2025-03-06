@@ -54,7 +54,7 @@ function spanClick(span) {
 
     deleteButton.addEventListener("click", () => {
       const li = span.parentElement;
-      console.log("click");
+      // console.log("click");
       li.remove();
       saveData();
     });
